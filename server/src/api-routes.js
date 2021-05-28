@@ -9,7 +9,6 @@ router.get('/', function (req, res) {
 
 
 const videoController = require('./video/videoController');
-
 router.route('/videos')
     .get(videoController.index)
     .post(videoController.new);
@@ -19,5 +18,16 @@ router.route('/videos/:video_id')
     .patch(videoController.update)
     .put(videoController.update)
     .delete(videoController.delete);
+
+const appController = require('./app/appController');
+router.route('/apps')
+    .post(appController.new);
+    
+router.route('/apps/:appId')
+    .get(appController.getManifest)
+    .delete(appController.delete);
+    
+
+
 
 module.exports = router;

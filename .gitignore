@@ -5,3 +5,9 @@ node_modules/
 node_modules
 
 release
+Player/Library
+Player/Logs
+Player/obj
+*.sln
+*.csproj
+Player/.vscode
